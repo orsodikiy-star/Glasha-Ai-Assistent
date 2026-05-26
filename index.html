@@ -51,24 +51,34 @@ transform:scale(0.97);
 
 <body>
 
-<video autoplay muted loop playsinline>
-<source src="Digen_video_1779789215169.mp4" type="video/mp4">
+<video id="glashaVideo" autoplay muted loop playsinline>
+  <source src="Glasha is writing.mp4" type="video/mp4">
 </video>
 
 <div class="overlay">
 <button onclick="speak()">Позвать Глашу</button>
 </div>
 
-<audio id="glashaVoice" controls src="./Glasha.mp3" preload="auto"></audio>
+
 
 <script>
 function speak() {
 
-    const audio = document.getElementById("glashaVoice");
+  const video = document.getElementById("glashaVideo");
 
-    audio.currentTime = 0;
+  video.pause();
 
-    audio.play();
+  video.innerHTML = `
+    <source src="Glasha.mp4" type="video/mp4">
+  `;
+
+  video.load();
+
+  video.muted = false;
+
+  video.play();
+
+}
 
 }
 </script>
