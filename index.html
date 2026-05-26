@@ -55,9 +55,9 @@ body {
 
 <div class="title">Glasha</div>
 
-<div class="bell" onclick="ringBell()">🔔</div>
+<img src="bell.png" class="bell" onclick="ringBell()" alt="bell">
 
-<video id="glashaVideo" autoplay muted loop playsinline>
+<video id="glashaVideo" autoplay loop playsinline>
   <source src="idle.mp4" type="video/mp4">
 </video>
 
@@ -74,6 +74,10 @@ const bellSound = document.getElementById("bellSound");
 function ringBell() {
   bellSound.currentTime = 0;
   bellSound.play();
+  setTimeout(() => {
+  bellSound.pause();
+  bellSound.currentTime = 0;
+}, 800);
 
   step++;
 
@@ -81,13 +85,14 @@ function ringBell() {
     video.src = "response.mp4";
     video.loop = false;
     video.play();
+    
   }
 
   else if (step === 2) {
     video.src = "farewell.MP4";
     video.loop = false;
     video.play();
-  }
+  
 
   else {
     step = 0;
