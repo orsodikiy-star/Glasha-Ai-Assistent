@@ -68,9 +68,7 @@ function speak() {
 
     audio.currentTime = 0;
 
-    audio.play().catch(function(error) {
-        alert(error.message);
-    });
+    audio.play();
 
 }
 </script>
