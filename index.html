@@ -56,34 +56,71 @@ transform:scale(0.97);
 </video>
 
 <div class="overlay">
-  <button onclick="speak()">Позвать Глашу</button>
-  <button onclick="releaseGlasha()">Отпустить</button>
+<img
+src="./IMG_2559.png"
+id="bell"
+onclick="toggleGlasha()"
+/>
 </div>
 
 
 
 <script>
-function speak() {
-  const video = document.getElementById("glashaVideo");
 
-  video.pause();
-  video.src = "./response.mp4";
-  video.loop = false;
-  video.muted = false;
-  video.load();
-  video.play();
+let state = 0;
+
+function toggleGlasha() {
+
+const video = document.getElementById("glashaVideo");
+
+const ring = new Audio("./Ring.mp3");
+ring.currentTime = 0;
+ring.play();
+
+if(state === 0){
+
+video.pause();
+
+video.src = "./response.mp4";
+video.loop = false;
+video.muted = false;
+
+video.load();
+video.play();
+
+state = 1;
+
 }
 
-function releaseGlasha() {
-  const video = document.getElementById("glashaVideo");
+else if(state === 1){
 
-  video.pause();
-  video.src = "./idle.mp4";
-  video.loop = true;
-  video.muted = true;
-  video.load();
-  video.play();
+video.pause();
+
+video.src = "./farewell.MP4";
+video.loop = false;
+video.muted = false;
+
+video.load();
+video.play();
+
+state = 2;
+
+video.onended = function(){
+
+video.src = "./idle.mp4";
+video.loop = true;
+video.muted = true;
+
+video.load();
+video.play();
+
+state = 0;
+
 }
+}
+
+}
+
 </script>
 
 
