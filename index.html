@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glasha Video UI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    .app {
+      max-width: 430px;
+      margin: 0 auto;
+      min-height: 100vh;
+      background: #181818;
+    }
+
+    .header {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .bell {
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .videos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      padding: 16px;
+    }
+
+    .video-card {
+      background: #242424;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .thumbnail {
+      height: 105px;
+      background: linear-gradient(135deg, #444, #777);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+
+    .video-title {
+      padding: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app">
+    <div class="header">
+      <div class="logo">Glasha</div>
+      <div class="bell">🔔</div>
+    </div>
+
+    <div class="videos">
+      <div class="video-card">
+        <div class="thumbnail">▶</div>
+        <div class="video-title">Видео 1</div>
+      </div>
+
+      <div class="video-card">
+        <div class="thumbnail">▶</div>
+        <div class="video-title">Видео 2</div>
+      </div>
+
+      <div class="video-card">
+        <div class="thumbnail">▶</div>
+        <div class="video-title">Видео 3</div>
+      </div>
+
+      <div class="video-card">
+        <div class="thumbnail">▶</div>
+        <div class="video-title">Видео 4</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
