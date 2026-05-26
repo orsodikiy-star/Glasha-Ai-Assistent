@@ -51,8 +51,8 @@ transform:scale(0.97);
 
 <body>
 
-<video id="glashaVideo" autoplay muted loop playsinline>
-  <source src="Glasha is writing.mp4" type="video/mp4">
+<video id="glashaVideo" autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
+  <source src="./idle.mp4" type="video/mp4">
 </video>
 
 <div class="overlay">
@@ -63,22 +63,16 @@ transform:scale(0.97);
 
 <script>
 function speak() {
-
   const video = document.getElementById("glashaVideo");
 
   video.pause();
-
-  video.innerHTML = `
-    <source src="Glasha.mp4" type="video/mp4">
-  `;
-
-  video.load();
-
+  video.src = "./response.mp4";
+  video.loop = false;
   video.muted = false;
-
+  video.load();
   video.play();
-
 }
+</script>
 
 }
 </script>
