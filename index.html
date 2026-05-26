@@ -59,24 +59,16 @@ transform:scale(0.97);
 <button onclick="speak()">Позвать Глашу</button>
 </div>
 
+<audio id="glashaVoice" src="Глаша.mp3"></audio>
+
 <script>
 function speak() {
 
-  const text = "Я вас слушаю";
+    const audio = document.getElementById("glashaVoice");
 
-  const utterance = new SpeechSynthesisUtterance(text);
+    audio.currentTime = 0;
 
-  utterance.lang = "ru-RU";
-  utterance.rate = 0.9;
-  utterance.pitch = 1;
-  utterance.volume = 1;
-
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utterance);
+    audio.play();
 
 }
 </script>
-
-
-</body>
-</html>
