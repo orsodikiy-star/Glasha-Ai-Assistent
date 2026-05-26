@@ -60,21 +60,24 @@ transform:scale(0.97);
 </div>
 
 <script>
+<script>
 function speak(){
+  const text = "Я вас слушаю";
 
-const text = "Я вас слушаю";
+  if ("speechSynthesis" in window) {
 
-const voice = new SpeechSynthesisUtterance(text);
+    const voice = new SpeechSynthesisUtterance(text);
 
-voice.lang = "ru-RU";
-voice.rate = 0.85;
-voice.pitch = 1.1;
-voice.volume = 1;
+    voice.lang = "ru-RU";
+    voice.rate = 0.85;
+    voice.pitch = 1.1;
+    voice.volume = 1;
 
-speechSynthesis.cancel();
-speechSynthesis.speak(voice);
-
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(voice);
+  }
 }
+</script>
 </script>
 
 </body>
