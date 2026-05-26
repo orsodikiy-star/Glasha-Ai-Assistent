@@ -61,7 +61,19 @@ transform:scale(0.97);
 
 <script>
 function speak(){
-alert("Глаша слушает...");
+
+const text = "Слушаю. Что записать?";
+
+const voice = new SpeechSynthesisUtterance(text);
+
+voice.lang = "ru-RU";
+voice.rate = 0.85;
+voice.pitch = 1.1;
+voice.volume = 1;
+
+speechSynthesis.cancel();
+speechSynthesis.speak(voice);
+
 }
 </script>
 
