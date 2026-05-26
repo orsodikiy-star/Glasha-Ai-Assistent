@@ -65,6 +65,8 @@ transform:scale(0.97);
 function speak() {
     const audio = document.getElementById("glashaVoice");
     audio.currentTime = 0;
-    audio.play();
+    audio.play().catch(function(error) {
+    alert(error.message);
+});
 }
 </script>
