@@ -59,14 +59,18 @@ transform:scale(0.97);
 <button onclick="speak()">Позвать Глашу</button>
 </div>
 
-<audio id="glashaVoice" src="./Glasha1.mp3" preload="auto"></audio>
+<audio id="glashaVoice" src="./glasha.mp3" preload="auto"></audio>
 
 <script>
 function speak() {
+
     const audio = document.getElementById("glashaVoice");
+
     audio.currentTime = 0;
+
     audio.play().catch(function(error) {
-    alert(error.message);
-});
+        alert(error.message);
+    });
+
 }
 </script>
