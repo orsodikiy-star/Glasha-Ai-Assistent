@@ -71,6 +71,14 @@ function speak() {
   video.muted = false;
   video.load();
   video.play();
+
+  video.onended = function() {
+  video.src = "./idle.mp4";
+  video.loop = true;
+  video.muted = true;
+  video.load();
+  video.play();
+};
 }
 </script>
 
