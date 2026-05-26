@@ -33,24 +33,18 @@ padding-bottom:80px;
 background:rgba(0,0,0,0.15);
 }
 
-button{
-background:rgba(255,255,255,0.1);
-border:1px solid rgba(255,255,255,0.2);
-color:white;
-padding:18px 40px;
-font-size:22px;
-border-radius:20px;
-backdrop-filter:blur(10px);
+#bell{
+position:absolute;
+right:35px;
+bottom:25px;
+width:38px;
+cursor:pointer;
+transition:0.2s;
+filter:drop-shadow(0 0 8px rgba(255,220,120,0.6));
 }
-
-button:active{
-transform:scale(0.97);
+#bell:active{
+transform:scale(0.92);
 }
-</style>
-</head>
-
-<body>
-
 <video id="glashaVideo" autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
   <source src="./idle.mp4" type="video/mp4">
 </video>
